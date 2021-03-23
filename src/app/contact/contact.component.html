@@ -1,0 +1,43 @@
+<form [formGroup]="info" (ngSubmit)="onSubmit()">
+
+    <label>
+
+        First Name:
+
+        <input type="text" formControlName="firstName">
+
+    </label>
+
+    <label>
+
+        Last Name:
+
+        <input type="text" formControlName="lastName">
+
+    </label>
+
+    <label>
+
+        Age:
+
+        <input type="text" formControlName="age">
+
+    </label>
+
+    <label>
+
+        Email:
+
+        <input type="text" formControlName="email">
+
+    </label>
+
+    <input type="submit" class="btn btn-primary" value="Submit">
+
+</form>
+
+<!-- <ng-template [ngIf]="">
+
+    <div class="align-self-center"></div>
+
+</ng-template> -->

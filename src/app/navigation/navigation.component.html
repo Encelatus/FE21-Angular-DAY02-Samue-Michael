@@ -1,14 +1,26 @@
 <ul class="nav justify-content-center navBar">
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/about">About</a>
-    </li>
-    <li class="nav-item d-flex">
-      <button (click)="countDonations()" class="btn btn-primary align-self-center">Donate 10€</button>
-    </li>
-    <li class="nav-item d-flex">
-      <div class="align-self-center">Donations Total: {{donationCounter}} €</div>
-    </li>
-  </ul>
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/about">About</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/contact">Contact</a>
+  </li>
+  <li class="nav-item d-flex"></li>
+
+  <ng-template [ngIf]="donationCounter >= 200">
+
+    <div class="align-self-center"><i class="bi bi-star-fill"></i> You are VIP <i class="bi bi-star-fill"></i></div>
+
+  </ng-template>
+
+  <li class="nav-item d-flex">
+    <button (click)="countDonations()" class="btn btn-primary align-self-center">Donate 10€</button>
+  </li>
+  <li class="nav-item d-flex">
+    <div class="align-self-center">Donations Total: {{donationCounter}} €
+    </div>
+  </li>
+</ul>
