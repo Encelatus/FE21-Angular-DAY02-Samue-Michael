@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
       carColor: Color,
       carPrice: Price
     }
-    // cars.push(car);
+    cars.push(car);
     // const localStorageArray = () => {
     //   for (let i of cars) {
 
