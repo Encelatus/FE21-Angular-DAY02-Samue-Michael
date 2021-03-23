@@ -9,10 +9,10 @@ import { cars2 } from '../cars';
 })
 export class HomeComponent implements OnInit, DoCheck {
   info = new FormGroup({
-    carName: new FormControl('', Validators.required),
-    carType: new FormControl('', Validators.required),
-    carColor: new FormControl('', Validators.required),
-    carPrice: new FormControl('', Validators.required),
+    carName: new FormControl('', [Validators.required, Validators.minLength(5)]),
+    carType: new FormControl('', [Validators.required, Validators.minLength(5)]),
+    carColor: new FormControl('', [Validators.required, Validators.minLength(5)]),
+    carPrice: new FormControl('', [Validators.required, Validators.minLength(5)]),
   });
 
   cars = cars2;

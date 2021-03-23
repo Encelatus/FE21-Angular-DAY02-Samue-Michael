@@ -3,19 +3,19 @@
 <form class="d-flex flex-column align-items-center" [formGroup]="info" (ngSubmit)="onSubmit()">
     <label>
         First Name:
-        <input type="text" formControlName="firstName">
+        <input id="fname" type="text" formControlName="firstName">
     </label>
     <label>
         Last Name:
-        <input type="text" formControlName="lastName">
+        <input id="lname" type="text" formControlName="lastName">
     </label>
     <label>
         Age:
-        <input type="text" formControlName="age">
+        <input id="age" type="text" formControlName="age">
     </label>
     <label>
         Email:
-        <input type="text" formControlName="email">
+        <input id="email" type="text" formControlName="email">
     </label>
     <input type="submit" class="btn btn-primary" value="Submit">
 </form>
