@@ -1,21 +1,21 @@
 <ul class="nav justify-content-center navBar">
-  <li class="nav-item">
+  <li class="nav-item mx-2">
     <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item mx-2">
     <a class="nav-link" routerLink="/contact">Contact</a>
   </li>
-  <li class="nav-item d-flex">
+  <li class="nav-item d-flex mx-2">
     <a class="nav-link" routerLink="/input">Input</a>
   </li>
   <ng-template [ngIf]="donationCounter >= 200">
     <div class="align-self-center"><i class="bi bi-star-fill"></i> You are VIP <i class="bi bi-star-fill"></i></div>
   </ng-template>
-  <li class="nav-item d-flex">
+  <li class="nav-item d-flex mx-2">
     <button (click)="countDonations()" class="btn btn-primary align-self-center">Donate 10€</button>
   </li>
-  <li class="nav-item d-flex">
-    <div class="align-self-center">Donations Total: {{donationCounter}} €
+  <li class="nav-item d-flex mx-2">
+    <div class="align-self-center">Donated Total: {{donationCounter}} €
     </div>
   </li>
 </ul>

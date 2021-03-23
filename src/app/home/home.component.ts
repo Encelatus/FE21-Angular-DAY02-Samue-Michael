@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit {
       carPrice: Price
     }
     cars.push(car);
+    this.info.reset();
   }
   }
 
