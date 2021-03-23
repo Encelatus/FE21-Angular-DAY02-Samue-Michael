@@ -1,3 +1,25 @@
+<div>
+    <h2>Add a new car</h2>
+    <form [formGroup]="info" (ngSubmit)="onSubmit(cars)">
+        <label>
+            Car Name:
+            <input type="text" id="carName" formControlName="carName">
+        </label>
+        <label>
+            Car Type:
+            <input type="text" id="carType" formControlName="carType">
+        </label>
+        <label>
+            Car Color:
+            <input type="text" id="carColor" formControlName="carColor">
+        </label>
+        <label>
+            Car Price:
+            <input type="number" id="carPrice" formControlName="carPrice">
+        </label>
+        <input type="submit" class="btn btn-primary" value="Submit">
+    </form>
+</div>
 <div class="row mt-4">
     <div *ngFor="let car of cars" class="col-12 col-md-6 col-lg-4">
         <div class="card mb-3">
