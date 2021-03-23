@@ -29,15 +29,24 @@ export class HomeComponent implements OnInit {
       carColor: Color,
       carPrice: Price
     }
-    cars.push(car);
+    // cars.push(car);
+    // const localStorageArray = () => {
+    //   for (let i of cars) {
+
+    //   }
+    // }
+    // localStorage.setItem('cars', this.cars.value);
     this.info.reset();
+    // console.log(localStorage.getItem('cars'));
   }
   }
+
+  
 
   ngOnInit(): void {
   }
 
-  cars = [{
+  cars: any = [{
     "carName": "Equinox",
     "carType": "Chevrolet",
     "carColor": "Orange",
