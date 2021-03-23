@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { cars2 } from '../cars';
 
 @Component({
   selector: 'home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, DoCheck {
   info = new FormGroup({
     carName: new FormControl('', Validators.required),
     carType: new FormControl('', Validators.required),
@@ -14,10 +15,14 @@ export class HomeComponent implements OnInit {
     carPrice: new FormControl('', Validators.required),
   });
 
+  cars = cars2;
+  carsX = cars2;
   constructor() { }
 
   onSubmit(cars: any) {
+    console.table(cars);
     if (this.info.valid) {
+    let a = this.info.value; // easier way to access info
     let Name = this.info.get("carName")?.value;
     let Type = this.info.get("carType")?.value;
     let Color = this.info.get("carColor")?.value;
@@ -29,63 +34,23 @@ export class HomeComponent implements OnInit {
       carColor: Color,
       carPrice: Price
     }
-    cars.push(car);
-    // const localStorageArray = () => {
-    //   for (let i of cars) {
-
-    //   }
-    // }
-    // localStorage.setItem('cars', this.cars.value);
+    cars.push(car); // add a instead of car for easier access
     this.info.reset();
-    // console.log(localStorage.getItem('cars'));
   }
   }
 
-  
+  // returnCars(){
+  //   return this.cars;
+  // }
 
   ngOnInit(): void {
+    console.log("hello");
+    // this.cars = this.returnCars();
   }
 
-  cars: any = [{
-    "carName": "Equinox",
-    "carType": "Chevrolet",
-    "carColor": "Orange",
-    "carPrice": 27748
-  }, {
-    "carName": "Scirocco",
-    "carType": "Volkswagen",
-    "carColor": "Puce",
-    "carPrice": 24218
-  }, {
-    "carName": "Explorer Sport Trac",
-    "carType": "Ford",
-    "carColor": "Blue",
-    "carPrice": 18512
-  }, {
-    "carName": "Windstar",
-    "carType": "Ford",
-    "carColor": "Khaki",
-    "carPrice": 28512
-  }, {
-    "carName": "5 Series",
-    "carType": "BMW",
-    "carColor": "Puce",
-    "carPrice": 31982
-  }, {
-    "carName": "GS",
-    "carType": "Lexus",
-    "carColor": "Red",
-    "carPrice": 17518
-  }, {
-    "carName": "Intrigue",
-    "carType": "Oldsmobile",
-    "carColor": "Yellow",
-    "carPrice": 19208
-  }, {
-    "carName": "88",
-    "carType": "Oldsmobile",
-    "carColor": "Puce",
-    "carPrice": 29580
-  }];
-
+  ngDoCheck(){
+    console.table(this.carsX);
+    // this.cars = this.returnCars();
+    // console.table(this.cars);
+  }
 }
